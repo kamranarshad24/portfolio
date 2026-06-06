@@ -170,12 +170,16 @@ nav {
   background: conic-gradient(from 180deg, #2563EB, #60A5FA, #2563EB);
   padding: 3.5px;
   animation: spin-slow 8s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 @keyframes spin-slow { to { transform: rotate(360deg); } }
 .hero-photo-inner {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  will-change: transform;
+  backface-visibility: hidden;
   overflow: hidden;
   background: var(--surface);
   display: flex;
@@ -220,6 +224,7 @@ nav {
   background: #fff;
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
@@ -882,6 +887,7 @@ nav {
   background: #22C55E;
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
+  will-change: transform, opacity;
   flex-shrink: 0;
 }
 
@@ -1313,8 +1319,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               2. Change src="photo.jpg" below to your actual filename
               The fallback "KA" initials show automatically if no photo is found.
             -->
-            <img src="Kamran Image.png" alt="Kamran Arshad" width="268" height="268" fetchpriority="high"
-                 onerror="this.style.display='none';document.getElementById('photo-fallback').style.display='flex'">
+            <picture>
+              <source srcset="Kamran Image.webp" type="image/webp">
+              <img src="Kamran Image.png" alt="Kamran Arshad" width="268" height="268" fetchpriority="high"
+                   onerror="this.style.display='none';document.getElementById('photo-fallback').style.display='flex'">
+            </picture>
             <div id="photo-fallback" class="photo-fallback" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">KA</div>
           </div>
         </div>
@@ -1418,7 +1427,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="about-photo-wrap fade-up" style="transition-delay:.2s">
         <div class="about-photo-blob"></div>
-        <img src="Kamran_profile_transparent.png" alt="Kamran Arshad" class="about-photo-img" loading="lazy" width="360" height="440">
+        <picture>
+          <source srcset="Kamran_profile_transparent.webp" type="image/webp">
+          <img src="Kamran_profile_transparent.png" alt="Kamran Arshad" class="about-photo-img" loading="lazy" width="480" height="582">
+        </picture>
       </div>
 
     </div>
