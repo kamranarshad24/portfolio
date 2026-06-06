@@ -862,6 +862,159 @@ nav {
 }
 .cert-view:hover { gap: 8px; }
 
+/* ---- AVAILABILITY BADGE ---- */
+.avail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #F0FDF4;
+  border: 1.5px solid #BBF7D0;
+  border-radius: 24px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #15803D;
+  margin-top: 20px;
+}
+.avail-dot {
+  width: 8px; height: 8px;
+  background: #22C55E;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ---- TESTIMONIALS ---- */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.review-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.review-card:hover { box-shadow: 0 12px 36px rgba(15,23,42,.08); transform: translateY(-4px); }
+.review-stars { color: #FBBF24; font-size: 15px; letter-spacing: 2px; }
+.review-text {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.75;
+  flex: 1;
+  font-style: italic;
+}
+.review-text::before { content: '\201C'; }
+.review-text::after  { content: '\201D'; }
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.review-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 800;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.review-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+.review-role { font-size: 12px; color: var(--muted); margin-top: 1px; }
+.review-client-tag {
+  font-size: 11px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-dim); padding: 3px 9px; border-radius: 5px;
+  display: inline-block; margin-bottom: 12px;
+}
+
+/* ---- HOW I WORK ---- */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+  position: relative;
+}
+.process-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  position: relative;
+}
+.process-num {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--accent-dim);
+  letter-spacing: -3px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.process-card h4 { font-size: 17px; font-weight: 800; letter-spacing: -.4px; margin-bottom: 10px; }
+.process-card p  { font-size: 14px; color: var(--muted); line-height: 1.65; }
+.process-arrow {
+  position: absolute;
+  right: -14px; top: 50%;
+  transform: translateY(-50%);
+  width: 28px; height: 28px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 12px; font-weight: 700;
+  z-index: 1;
+}
+.process-card:last-child .process-arrow { display: none; }
+
+/* ---- FAQ ---- */
+.faq-list { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.faq-item {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.faq-q {
+  width: 100%; text-align: left; background: none; border: none;
+  padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;
+  font-size: 15px; font-weight: 700; color: var(--ink);
+  cursor: pointer; font-family: inherit; gap: 16px;
+}
+.faq-icon { font-size: 20px; color: var(--accent); flex-shrink: 0; transition: transform .3s; line-height:1; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  font-size: 14px; color: var(--muted); line-height: 1.75;
+  padding: 0 24px; max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
+
+/* ---- WHATSAPP FLOAT ---- */
+.wa-float {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 9000;
+  display: flex; align-items: center; gap: 10px;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 20px 12px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  box-shadow: 0 6px 24px rgba(37,211,102,.4);
+  transition: transform .2s, box-shadow .2s;
+}
+.wa-float:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(37,211,102,.5); }
+.wa-float svg { flex-shrink: 0; }
+
 /* ---- THANK YOU / FOOTER ---- */
 .thankyou-section {
   background: var(--surface);
@@ -1067,6 +1220,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
           <a href="#work" class="btn btn-outline btn-lg">View My Work</a>
         </div>
+        <div class="avail-badge"><span class="avail-dot"></span>Available — taking new clients now</div>
         <div class="hero-meta">
           <span>📍 Islamabad, Pakistan</span>
           <a href="https://linkedin.com/in/kamran-arshad24" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -1369,6 +1523,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- HOW I WORK -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="label">My Process</span>
+      <h2>How I Work.</h2>
+      <p class="section-sub">Three steps — from first call to results you can actually see.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card fade-up">
+        <div class="process-num">01</div>
+        <h4>Audit First</h4>
+        <p>Before I touch anything, I review your current setup — ad account, tracking, store — and find exactly what's costing you money or hiding your results. No guessing, no generic advice.</p>
+        <div class="process-arrow">→</div>
+      </div>
+      <div class="process-card fade-up" style="transition-delay:.1s">
+        <div class="process-num">02</div>
+        <h4>Build & Fix</h4>
+        <p>I fix the tracking infrastructure first — GTM, pixels, conversions — so every decision after this is based on real data. Then I build or optimise the campaigns and store around that foundation.</p>
+        <div class="process-arrow">→</div>
+      </div>
+      <div class="process-card fade-up" style="transition-delay:.2s">
+        <div class="process-num">03</div>
+        <h4>Run & Optimise</h4>
+        <p>Once everything is tracking correctly, I manage and scale the campaigns — cutting spend that isn't working, doubling down on what is. You get regular updates in plain language, not a report you need a degree to read.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- EDUCATION -->
 <section class="section" id="education">
   <div class="container">
@@ -1451,6 +1635,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="section--soft" id="reviews">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="label">Client Reviews</span>
+      <h2>What Clients Say.</h2>
+      <p class="section-sub">Real words from real clients — unedited.</p>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card fade-up">
+        <div>
+          <span class="review-client-tag">The Body Essential</span>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <p class="review-text">I'd been running Meta ads for months and quietly bleeding money without understanding why. Kamran was the first person who actually got into the account instead of just telling me to "raise the budget." Turned out I had two pixels installed — one of them basically dead, disconnected from Shopify and logging orders that never happened. He spotted it almost immediately. After that he rebuilt the store properly, took over the campaigns, and set up the post-purchase emails and fixed a bunch of SEO stuff I didn't even know was broken. The difference is mostly that I trust my numbers now. Wish I'd found him a year earlier.</p>
+        <div class="review-author">
+          <div class="review-avatar">JA</div>
+          <div>
+            <div class="review-name">Junaid Ashraf</div>
+            <div class="review-role">CEO, The Body Essential — Fashion E-commerce</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card fade-up" style="transition-delay:.1s">
+        <div>
+          <span class="review-client-tag">Smile Line Dental</span>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <p class="review-text">We're a small practice and had been paying for Google Ads more or less on faith. We knew people were calling, but we had no real way of knowing which ads were actually bringing patients in. Kamran set up proper tracking for our enquiry forms and our phone calls, and for the first time we could see which searches turned into actual appointments rather than just clicks. What I appreciated most was that he explained it in normal language — the technical side isn't my world at all. The campaigns are managed properly now and we've stopped guessing. Genuinely useful to a clinic like ours.</p>
+        <div class="review-author">
+          <div class="review-avatar">DI</div>
+          <div>
+            <div class="review-name">Dr Imran</div>
+            <div class="review-role">Smile Line Dental Clinic, Islamabad</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card fade-up" style="transition-delay:.2s">
+        <div>
+          <span class="review-client-tag">Mr Expert Carpet Cleaning</span>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <p class="review-text">Before Kamran got involved, we barely existed online. He rebuilt the whole site from scratch — it loads fast, works properly on a phone, and people in Slough can actually find us now. He also put in all the tracking behind the scenes and got our Google Ads running with conversion tracking that actually works. Enquiries started coming through the website, which is exactly what we needed. He's still looking after everything for us and I'm happy to leave it in his hands.</p>
+        <div class="review-author">
+          <div class="review-avatar">WA</div>
+          <div>
+            <div class="review-name">Waseem Ahmed</div>
+            <div class="review-role">Mr Expert Carpet Cleaning, Slough UK</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section">
   <div class="container">
@@ -1465,6 +1708,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <span class="cta-or">or reach out directly</span>
     <a href="mailto:mkamran.arshad24@gmail.com" class="cta-email-link">mkamran.arshad24@gmail.com</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="label">FAQ</span>
+      <h2>Common Questions.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item fade-up">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do you work with small budgets? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes. Most of my clients are small businesses spending between $200–$1,000/month on ads. In fact, getting tracking right matters more at small budgets — every dollar needs to be accounted for. I don't take on clients just to spend their money.</div>
+      </div>
+      <div class="faq-item fade-up" style="transition-delay:.06s">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Where are you based, and do you work internationally? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">I'm based in Islamabad, Pakistan. I work with clients remotely across Pakistan, the UK, and internationally. Time zones haven't been an issue — I communicate async and respond within a few hours during working hours.</div>
+      </div>
+      <div class="faq-item fade-up" style="transition-delay:.12s">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do we communicate during a project? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">WhatsApp for quick updates and questions, email for anything that needs a paper trail. I send a short update at the end of each week so you're never wondering what's happening. No need to chase me.</div>
+      </div>
+      <div class="faq-item fade-up" style="transition-delay:.18s">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What do you need from me to get started? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Access to your ad accounts and/or website (as an admin or analyst — I'll guide you through this). A brief on your business and what you're trying to achieve. That's usually enough to get started within 24–48 hours.</div>
+      </div>
+      <div class="faq-item fade-up" style="transition-delay:.24s">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do you offer one-off work or only ongoing retainers? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Both. I do one-off audits, tracking setups, and site builds — as well as ongoing ad management. If you just need something fixed, I'll fix it. If you want someone to run your campaigns long-term, I can do that too.</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1670,6 +1955,23 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   goTo(0);
   startTimer();
 });
+</script>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/923325252517" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  Chat on WhatsApp
+</a>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
 </script>
 
 </body>
